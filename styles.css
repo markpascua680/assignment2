@@ -1,0 +1,79 @@
+body {
+    margin: 0px;
+    background-color: azure;
+}
+
+header {
+    height: 75px;
+    background-color: darkslategray;
+}
+
+main {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+img {
+    border-radius: 50%;
+    width: 50px;
+}
+
+.column {
+    float: left;
+}
+
+.posts {
+    width: 75%;
+}
+
+.new-post {
+    margin: 25px;
+    border: 2px black;
+    border-style: groove;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: block;
+}
+
+.card {
+    margin: 25px;
+    border: 2px black;
+    border-style: groove;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.card h2 {
+    text-align: center;
+}
+
+/* Top left of nav bar */
+nav span:first-child {
+    padding: 20px;
+}
+
+nav span:first-child a {
+    padding: 10px;
+    margin: 0px;
+    text-decoration: none;
+    color: white;
+}
+
+nav span:first-child a:hover {
+    color: aqua;
+}
+
+/* Top right of nav bar */
+nav span:last-child {
+    float: right;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+nav span:last-child img:hover {
+    border: 1px aqua solid;
+}
+
+footer {
+    float: left;
+}
