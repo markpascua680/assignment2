@@ -1,3 +1,7 @@
+element {
+    --header-height: 75px;
+}
+
 body {
     margin: 0px;
     background-color: azure;
@@ -11,6 +15,7 @@ header {
 main {
     margin-left: 100px;
     margin-right: 100px;
+    display: inline-block;
 }
 
 img {
@@ -20,32 +25,35 @@ img {
 
 .column {
     float: left;
-    width: 25%;
+}
+
+.personal {
+    width: 33%;
+    
+    .profile:first-child section{
+        text-align: center;
+    }
 }
 
 .posts {
     width: 45%;
 }
 
-.new-post {
+.new-post, .post {
     margin: 25px;
-    border: 2px black;
+    border: 2px rgba(0,0,0,0.3);
+    border-style: groove;
+    padding: 25px;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+}
+
+.profile, .highlights, .interests, .friends {
+    margin: 25px;
+    border: 2px rgba(0,0,0,0.3);
     border-style: groove;
     padding-left: 25px;
     padding-right: 25px;
-    display: block;
-}
-
-.card {
-    margin: 25px;
-    border: 2px black;
-    border-style: groove;
-    padding-left: 25px;
-    padding-right: 25px;
-}
-
-.card h2 {
-    text-align: center;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
 }
 
 /* Top left of nav bar */
@@ -54,10 +62,14 @@ nav span:first-child {
 }
 
 nav span:first-child a {
-    padding: 10px;
-    margin: 0px;
+    width: 25px;
+    height: var(--header-height);
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
     text-decoration: none;
     color: white;
+    font-size: x-large;
 }
 
 nav span:first-child a:hover {
