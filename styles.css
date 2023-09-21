@@ -125,6 +125,38 @@ img {
     padding: 25px;
     box-shadow: 0 3px 3px rgba(0,0,0,0.2);
     background-color: aliceblue;
+    ::before {
+        font-family: 'FontAwesome';
+        color: white;
+        padding-right: 5px;
+    }
+    .author {
+        margin-bottom: 10px;
+    }
+}
+
+button {
+    margin: 5px;
+    padding: 5px;
+    border: 2px rgba(47, 79, 79, 0.4) solid;
+    color: white;
+    background-color: rgba(0, 62, 121, 0.4);
+}
+
+.new-post button::before {
+    font-family: 'FontAwesome';
+    color: white;
+    content: '\f14b';
+    padding-right: 5px;
+}
+
+.post .post-buttons {
+    > :first-child::before {
+        content: '\f164';
+    }
+    > :last-child::before {
+        content: '\f075';
+    }
 }
 
 /* Top left of nav bar */
