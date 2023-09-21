@@ -59,9 +59,9 @@ img {
 }
 
 .highlights {
-    width: 50%;
-    margin: 25px auto;
-    padding: 0px 25px;
+    max-width: 30%;
+    margin: 0px auto;
+    padding: 0px 50px 0px 25px;
     border: 2px rgba(0,0,0,0.3) groove;
     background-color: rgba(0, 62, 121, 0.4);
     box-shadow: 0 3px 3px rgba(0,0,0,0.2);
@@ -94,8 +94,25 @@ img {
     }
 }
 
-.interests section h3 ul {
-    background-color: black;
+.profile, .interests, .friends {
+    margin: 25px;
+    border: 2px rgba(0,0,0,0.3) groove;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    background-color: aliceblue;
+}
+
+.interests section ul {
+    padding: 0px;
+    > li {
+        margin: 5px;
+        padding: 5px;
+        border: 2px rgba(47, 79, 79, 0.4) solid;
+        color: white;
+        background-color: rgba(0, 62, 121, 0.4);
+        display: inline-block;
+    }
 }
 
 .posts {
@@ -106,15 +123,6 @@ img {
     margin: 25px;
     border: 2px rgba(0,0,0,0.3) groove;
     padding: 25px;
-    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-    background-color: aliceblue;
-}
-
-.profile, .interests, .friends {
-    margin: 25px;
-    border: 2px rgba(0,0,0,0.3) groove;
-    padding-left: 25px;
-    padding-right: 25px;
     box-shadow: 0 3px 3px rgba(0,0,0,0.2);
     background-color: aliceblue;
 }
