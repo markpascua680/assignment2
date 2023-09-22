@@ -12,10 +12,11 @@ header {
     background-color: darkslategray;
 }
 
-main {
-    margin-left: 100px;
-    margin-right: 100px;
-    display: inline-block;
+#gridholder {
+    margin: 0px 10%;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    gap: 20px;
 }
 
 img {
@@ -28,7 +29,15 @@ img {
 }
 
 .personal {
-    width: 25%;
+    grid-column: 1;
+}
+
+.posts {
+    grid-column: 2;
+}
+
+.friends {
+    grid-column: 3;
 }
 
 .profile section:first-child {
@@ -59,9 +68,8 @@ img {
 }
 
 .highlights {
-    max-width: 30%;
-    margin: 0px auto;
-    padding: 0px 50px 0px 25px;
+    margin: 25px;
+    padding: 0px 25px 0px 25px;
     border: 2px rgba(0,0,0,0.3) groove;
     background-color: rgba(0, 62, 121, 0.4);
     box-shadow: 0 3px 3px rgba(0,0,0,0.2);
@@ -115,10 +123,6 @@ img {
     }
 }
 
-.posts {
-    width: 45%;
-}
-
 .new-post, .post {
     margin: 25px;
     border: 2px rgba(0,0,0,0.3) groove;
@@ -131,7 +135,15 @@ img {
         padding-right: 5px;
     }
     .author {
-        margin-bottom: 10px;
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 15px;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    .time-since-published {
+        vertical-align: top;
+        float: right;
     }
 }
 
@@ -159,7 +171,6 @@ button {
     }
 }
 
-/* Top left of nav bar */
 nav span:first-child {
     padding-left: 20px;
     position: absolute;
@@ -181,7 +192,6 @@ nav span:first-child a:hover {
     color: aqua;
 }
 
-/* Top right of nav bar */
 nav span:last-child {
     float: right;
     padding-top: 10px;
@@ -193,5 +203,10 @@ nav span:last-child img:hover {
 }
 
 footer {
-
+    height: 75px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: darkslategray;
+    vertical-align: bottom;
 }
