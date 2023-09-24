@@ -19,6 +19,89 @@ header {
     gap: 20px;
 }
 
+nav span:first-child {
+    padding-left: 20px;
+    position: absolute;
+    transform: translateY(100%);
+}
+
+nav span:first-child {
+    > a {
+        width: 25px;
+        padding-left: 25px;
+        padding-right: 10px;
+        vertical-align: middle;
+        text-decoration: none;
+        color: white;
+        font-size: x-large;
+    }
+}
+
+.badge {
+    position: absolute;
+    font-size: 14px;
+    background-color: red;
+    color: white;
+    top: -5px;
+    right: -12px;
+    padding: 2px 8px;
+    text-align: center;
+    border-radius: 100%;
+}
+
+nav span:first-child a:hover {
+    color: aqua;
+}
+
+nav span #profile-button {
+    float: right;
+    padding-top: 10px;
+    padding-right: 20px;
+    > img {
+        border-radius: 0%;
+        border: 1px solid transparent;
+        &:hover {
+            border: 1px aqua solid;
+        }
+    }
+}
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    padding: 0px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    color: black;
+    font-size: 18px;
+    > p {
+        padding: 10px;
+        margin: 0;
+        border-bottom: 2px rgba(0,0,0,0.3) groove;
+        &:hover {
+            background-color: rgba(0, 62, 121, 0.4);
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
+  
+  .dropdown:hover .dropdown-content {
+    position: absolute;
+    top: 20px;
+    left: -25px;
+    display: flex;
+    flex-direction: column;
+    text-wrap: nowrap;
+  }
+
 img {
     border-radius: 50%;
     width: 50px;
@@ -43,6 +126,10 @@ img {
 .profile section:first-child {
     text-align: center;
     border-bottom: 2px rgba(0,0,0,0.3) groove;
+    > h2 > img {
+        width: 50%;
+        border-radius: 0%;
+    }
 }
 
 .profile section:last-child {
@@ -76,12 +163,17 @@ img {
 
     .profile-points ul {
         > li {
+            height: 30px;
+            width: 100%;
             text-indent: 20px;
-            padding-bottom: 15px;
+            align-self: center;
         }
         > li a {
+            width: 100%;
+            height: 100%;
             text-decoration: none;
             color: white;
+            display: flex;
         }
         > li a:hover {
             color: orange;
@@ -102,7 +194,7 @@ img {
     }
 }
 
-.profile, .interests, .friends {
+.profile, .interests, .friend-request {
     margin: 25px;
     border: 2px rgba(0,0,0,0.3) groove;
     padding-left: 25px;
@@ -134,10 +226,13 @@ img {
         color: white;
         padding-right: 5px;
     }
+    .avatar img {
+        width: 10%;
+    }
     .author {
         display: inline-block;
         vertical-align: top;
-        padding-top: 15px;
+        padding-top: 25px;
         font-size: 1.5em;
         font-weight: bold;
     }
@@ -153,6 +248,12 @@ button {
     border: 2px rgba(47, 79, 79, 0.4) solid;
     color: white;
     background-color: rgba(0, 62, 121, 0.4);
+}
+
+.posts button {
+    &:hover {
+        background-color: rgba(0, 114, 221, 0.4);
+    }
 }
 
 .new-post button::before {
@@ -171,35 +272,67 @@ button {
     }
 }
 
-nav span:first-child {
-    padding-left: 20px;
-    position: absolute;
-    transform: translateY(100%);
+.friend-request {
+    > h3 {
+        text-align: center;
+    }
+    > h4 {
+        text-align: center;
+    }
+    > img {
+        display: block;
+        margin: 0px auto;
+        width: 40%;
+    }
 }
 
-nav span:first-child a {
-    width: 25px;
-    height: var(--header-height);
+.friend-request-buttons {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 15px;
+    height: 50px;
+    padding: 0px 10px 15px 0px;
+    > a {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        border: 2px solid transparent;
+    }
+    > a:hover {
+        border: 2px rgba(47, 79, 79, 0.4) solid;
+    }
+    > :first-child {
+        background-color: rgba(43, 207, 43, 0.75);
+        &:hover {
+            background-color: rgba(43, 207, 43, 0.25);
+        } 
+    }
+    > :last-child {
+        background-color: rgba(207, 47, 47, 0.75);
+        &:hover {
+            background-color: rgba(207, 47, 47, 0.25);
+        } 
+    }
+}
+
+.placeholder {
+    margin: 25px;
+    height: 50%;
+    border: 2px rgba(0,0,0,0.3) groove;
     padding-left: 25px;
-    padding-right: 10px;
-    vertical-align: middle;
-    text-decoration: none;
-    color: white;
-    font-size: x-large;
-}
-
-nav span:first-child a:hover {
-    color: aqua;
-}
-
-nav span:last-child {
-    float: right;
-    padding-top: 10px;
-    padding-right: 20px;
-}
-
-nav span:last-child img:hover {
-    border: 1px aqua solid;
+    padding-right: 25px;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    background-color: bisque;
+    > p {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 footer {
@@ -209,4 +342,5 @@ footer {
     bottom: 0;
     background-color: darkslategray;
     vertical-align: bottom;
+    color: white;
 }
